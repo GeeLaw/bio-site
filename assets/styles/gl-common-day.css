@@ -1,0 +1,112 @@
+/* Edge (Chromium) sets the background of <body> under High
+** Contrast mode even if -ms-high-contrast-adjust: none;
+** is effective on <body>. This makes sure if I manually
+** disable -ms-high-contrast-adjust on <html> tag, I get
+** normal palette with High Contrast layout.
+*/
+body, .gl-page-background { background: #FAFAFA; }
+
+.gl-entry { color: #111; }
+.gl-entry-metadata-box { color: #5a5a5a; }
+
+.gl-entry mark
+{
+    background: yellow;
+    color: black;
+}
+
+.gl-entry u[gl-unusual="ungrammatical"]
+{
+    border-bottom-color: #24d;
+}
+.gl-entry u[gl-unusual="misspelled"]
+{
+    border-bottom-color: #d24;
+}
+
+.gl-entry pre
+{
+    background: #EEE;
+    color: black;
+}
+.gl-entry :not(pre) > code
+{
+    background: #f9f2f4;
+    color: #c7254e;
+}
+.gl-entry :not(pre) > samp
+{
+    background: #ebfaeb;
+    color: #0b8e0b;
+}
+.gl-entry kbd
+{
+    color: black;
+    background: #dedede;
+    border-color: #dedede;
+    border-bottom-color: #999;
+}
+.gl-entry blockquote
+{
+    border-color: #777;
+    color: #444;
+}
+
+.gl-entry h1, .gl-entry h2 { border-color: #CCC; }
+
+.gl-entry table > thead > tr > th, .gl-entry table > tbody > tr > td
+{ border-color: #CCC; }
+
+.gl-entry table:not(.gl-suppress-banding) > tbody > tr:nth-child(2n+5),
+.gl-entry table:not(.gl-suppress-banding) > tbody > tr:first-child:not(:nth-last-child(-n+3)),
+.gl-entry table:not(.gl-suppress-banding) > tbody > tr:nth-child(3):not(:last-child)
+{ background-color: rgba(0, 0, 0, 0.02); }
+
+/* Main color inferred by Windows from BLEU DE CHANEL picutres. */
+.gl-entry a[href]:link { color: #0078d7; }
+.gl-entry a[href]:visited { color: #0078d7; }
+.gl-entry a[href]:hover { color: #0078d7; }
+.gl-entry a[href]:active { color: #004275; }
+
+.gl-entry footer
+{
+    color: #555;
+}
+
+.gl-entry .gl-light-theme-forbidden { display: none !important; }
+
+@media print
+{
+    /* Some browsers don't print background graphics.
+     * Make sure highlighted content is identifiable.
+     * This style mimics that in High Contrast mode.
+     */
+    .gl-entry mark
+    {
+        border-width: 2px;
+        border-style: solid;
+        border-color: goldenrod;
+        font-weight: bolder;
+        padding: 0 0.2em 0.1em 0.2em;
+    }
+    body, .gl-page-background { background: white; }
+    /* Explicitly specify the colours to avoid interference from High Contrast.
+     * These values are always used when printing -- dark theme is not applied for printing.
+     */
+    .gl-entry-metadata-box a[href][href]:link { color: #5a5a5a; }
+    .gl-entry-metadata-box a[href][href]:hover { color: #5a5a5a; }
+    .gl-entry-metadata-box a[href][href]:visited { color: #5a5a5a; }
+    .gl-entry-metadata-box a[href][href]:active { color: #5a5a5a; }
+    .gl-entry blockquote figcaption a[href][href]:link { color: #444; }
+    .gl-entry blockquote figcaption a[href][href]:hover { color: #444; }
+    .gl-entry blockquote figcaption a[href][href]:visited { color: #444; }
+    .gl-entry blockquote figcaption a[href][href]:active { color: #444; }
+    .gl-entry figcaption a[href][href]:link { color: #222; }
+    .gl-entry figcaption a[href][href]:hover { color: #222; }
+    .gl-entry figcaption a[href][href]:visited { color: #222; }
+    .gl-entry figcaption a[href][href]:active { color: #222; }
+    footer a[href][href]:link { color: #222; }
+    footer a[href][href]:hover { color: #222; }
+    footer a[href][href]:visited { color: #222; }
+    footer a[href][href]:active { color: #222; }
+}

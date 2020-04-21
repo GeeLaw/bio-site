@@ -1,0 +1,418 @@
+.gl-bibtex-preamble
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.gl-bibtex-bst-bio
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.gl-bibtex-bst-bio > .gl-bibtex-entry
+{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.gl-bibtex-bst-bio > .gl-bibtex-notfirstentry
+{
+    padding-top: 0.5em;
+    border-top: 1px dashed #cfcfcf;
+}
+
+.gl-bibtex-entry-title
+{
+    font-weight: bold;
+}
+
+.gl-bibtex-entry-title,
+.gl-bibtex-entry-authors,
+.gl-bibtex-entry-info,
+.gl-bibtex-entry-extra
+{
+    padding-left: 1em;
+}
+
+.gl-bibtex-entry-bullet
+{
+    width: 1em;
+    margin-left: -1em;
+    display: inline-block;
+    text-align: left;
+}
+
+.gl-bibtex-entry-venue
+{
+    font-weight: bold;
+}
+
+@media print
+{
+    .gl-bibtex-entry-eprint::after,
+    .gl-bibtex-entry-arxiv::after
+    {
+        content: " (" attr(data-value) ")";
+    }
+}
+
+/* Default font: sffamily, mdseries, upshape.
+ * Note that since these classes are explicit formatting classes
+ * (not semantic classes), it's appropriate to use "!important".
+ */
+
+/* .gl-bibtex-tex-text { } */
+
+/* Font family BEGIN */
+
+.gl-bibtex-tex-textrm,
+.gl-bibtex-tex-rmfamily,
+.gl-bibtex-tex-rm
+{
+    font-family:
+    /* @@ LatinSerifFont */
+        'Georgia', 'Times New Roman'
+    /* LatinSerifFont @@ */,
+    /* @@ ChSimpSerifFont */
+        'STZhongsong', 'STSongTi', 'STFangSong', 'SimSun'
+    /* ChSimpSerifFont @@ */,
+        serif !important;
+}
+
+.gl-bibtex-tex-textrm:lang(zh),
+.gl-bibtex-tex-rmfamily:lang(zh),
+.gl-bibtex-tex-rm:lang(zh)
+{
+    font-family:
+    /* @@ ChSimpPunctSansFont */
+        'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+    /* ChSimpPunctSansFont @@ */,
+    /* @@ LatinSerifFont */
+        'Georgia', 'Times New Roman'
+    /* LatinSerifFont @@ */,
+    /* @@ ChSimpSerifFont */
+        'STZhongsong', 'STSongTi', 'STFangSong', 'SimSun'
+    /* ChSimpSerifFont @@ */,
+        serif !important;
+}
+
+/* Obselete commands will reset to the default family. */
+.gl-bibtex-tex-textsf,
+.gl-bibtex-tex-sffamily,
+.gl-bibtex-tex-sf,
+.gl-bibtex-tex-md,
+.gl-bibtex-tex-bf,
+.gl-bibtex-tex-up,
+.gl-bibtex-tex-sl,
+.gl-bibtex-tex-it,
+.gl-bibtex-tex-sc
+{
+    font-family:
+    /* @@ LatinSansFont */
+        'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+    /* LatinSansFont @@ */,
+    /* @@ ChSimpSansFontLow */
+        'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpSansFontLow @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        sans-serif !important;
+}
+
+.gl-bibtex-tex-textsf:lang(zh),
+.gl-bibtex-tex-sffamily:lang(zh),
+.gl-bibtex-tex-sf:lang(zh),
+.gl-bibtex-tex-md:lang(zh),
+.gl-bibtex-tex-bf:lang(zh),
+.gl-bibtex-tex-up:lang(zh),
+.gl-bibtex-tex-sl:lang(zh),
+.gl-bibtex-tex-it:lang(zh),
+.gl-bibtex-tex-sc:lang(zh)
+{
+    font-family:
+    /* @@ ChSimpPunctSansFont */
+        'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+    /* ChSimpPunctSansFont @@ */,
+    /* @@ LatinSansFont */
+        'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+    /* LatinSansFont @@ */,
+    /* @@ ChSimpSansFontLow */
+        'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpSansFontLow @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        sans-serif !important;
+}
+
+.gl-bibtex-tex-texttt,
+.gl-bibtex-tex-ttfamily,
+.gl-bibtex-tex-tt
+{
+    font-family:
+    /* @@ LatinMonoFont */
+        'Consolas', 'Menlo', 'Courier New', 'Courier'
+    /* LatinMonoFont @@ */,
+    /* @@ ChSimpMonoFontLow */
+        'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpMonoFontLow @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        monospace !important;
+}
+
+.gl-bibtex-tex-texttt:lang(zh),
+.gl-bibtex-tex-ttfamily:lang(zh),
+.gl-bibtex-tex-tt:lang(zh)
+{
+    font-family:
+    /* @@ ChSimpPunctSansFont */
+        'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+    /* ChSimpPunctSansFont @@ */,
+    /* @@ LatinMonoFont */
+        'Consolas', 'Menlo', 'Courier New', 'Courier'
+    /* LatinMonoFont @@ */,
+    /* @@ ChSimpMonoFontLow */
+        'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpMonoFontLow @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        monospace !important;
+}
+
+/* Font family END */
+
+/* Font series BEGIN */
+
+/* Obselete commands will reset to mdseries. */
+.gl-bibtex-tex-textmd,
+.gl-bibtex-tex-mdseries,
+.gl-bibtex-tex-md,
+.gl-bibtex-tex-rm,
+.gl-bibtex-tex-sf,
+.gl-bibtex-tex-tt,
+.gl-bibtex-tex-up,
+.gl-bibtex-tex-sl,
+.gl-bibtex-tex-it,
+.gl-bibtex-tex-sc
+{
+    font-weight: normal !important;
+}
+
+.gl-bibtex-tex-textbf,
+.gl-bibtex-tex-bfseries,
+.gl-bibtex-tex-bf
+{
+    font-weight: bold !important;
+}
+
+/* Font series END */
+
+/* Font shape BEGIN */
+
+/* Obselete commands will reset to upshape. */
+.gl-bibtex-tex-textup,
+.gl-bibtex-tex-upshape,
+.gl-bibtex-tex-up,
+.gl-bibtex-tex-rm,
+.gl-bibtex-tex-sf,
+.gl-bibtex-tex-tt,
+.gl-bibtex-tex-md,
+.gl-bibtex-tex-bf
+{
+    font-style: normal !important;
+    font-variant: normal !important;
+}
+
+.gl-bibtex-tex-textsl,
+.gl-bibtex-tex-slshape,
+.gl-bibtex-tex-sl
+{
+    font-style: oblique !important;
+    font-variant: normal !important;
+}
+
+.gl-bibtex-tex-textit,
+.gl-bibtex-tex-itshape,
+.gl-bibtex-tex-it
+{
+    font-style: italic !important;
+    font-variant: normal !important;
+}
+
+.gl-bibtex-tex-textsc,
+.gl-bibtex-tex-scshape,
+.gl-bibtex-tex-sc
+{
+    font-style: normal !important;
+    font-variant: small-caps !important;
+}
+
+/* Font shape END */
+
+/*
+Simply do not handle em/emph italics alternation.
+Use the website base style.
+
+.gl-bibtex-tex-em, .gl-bibtex-tex-emph { }
+*/
+
+@media (min-resolution: 140dpi)
+{
+.gl-bibtex-tex-textsf,
+.gl-bibtex-tex-sffamily,
+.gl-bibtex-tex-sf,
+.gl-bibtex-tex-md,
+.gl-bibtex-tex-bf,
+.gl-bibtex-tex-up,
+.gl-bibtex-tex-sl,
+.gl-bibtex-tex-it,
+.gl-bibtex-tex-sc
+{
+    font-family:
+    /* @@ LatinSansFont */
+        'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+    /* LatinSansFont @@ */,
+    /* @@ ChSimpSansFontHigh */
+        'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpSansFontHigh @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        sans-serif !important;
+}
+
+.gl-bibtex-tex-textsf:lang(zh),
+.gl-bibtex-tex-sffamily:lang(zh),
+.gl-bibtex-tex-sf:lang(zh),
+.gl-bibtex-tex-md:lang(zh),
+.gl-bibtex-tex-bf:lang(zh),
+.gl-bibtex-tex-up:lang(zh),
+.gl-bibtex-tex-sl:lang(zh),
+.gl-bibtex-tex-it:lang(zh),
+.gl-bibtex-tex-sc:lang(zh)
+{
+    font-family:
+    /* @@ ChSimpPunctSansFont */
+        'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+    /* ChSimpPunctSansFont @@ */,
+    /* @@ LatinSansFont */
+        'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+    /* LatinSansFont @@ */,
+    /* @@ ChSimpSansFontHigh */
+        'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpSansFontHigh @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        sans-serif !important;
+}
+
+.gl-bibtex-tex-texttt,
+.gl-bibtex-tex-ttfamily,
+.gl-bibtex-tex-tt
+{
+    font-family:
+    /* @@ LatinMonoFont */
+        'Consolas', 'Menlo', 'Courier New', 'Courier'
+    /* LatinMonoFont @@ */,
+    /* @@ ChSimpMonoFontHigh */
+        'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpMonoFontHigh @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        monospace !important;
+}
+
+.gl-bibtex-tex-texttt:lang(zh),
+.gl-bibtex-tex-ttfamily:lang(zh),
+.gl-bibtex-tex-tt:lang(zh)
+{
+    font-family:
+    /* @@ ChSimpPunctSansFont */
+        'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+    /* ChSimpPunctSansFont @@ */,
+    /* @@ LatinMonoFont */
+        'Consolas', 'Menlo', 'Courier New', 'Courier'
+    /* LatinMonoFont @@ */,
+    /* @@ ChSimpMonoFontHigh */
+        'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+    /* ChSimpMonoFontHigh @@ */,
+    /* @@ EmojiFont */
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+    /* EmojiFont @@ */,
+        monospace !important;
+}
+}
+
+.gl-bibtex-tex-fbox,
+.gl-bibtex-tex-frame,
+.gl-bibtex-tex-framebox
+{ border: 1px solid black !important; }
+
+.gl-bibtex-tex-fbox,
+.gl-bibtex-tex-framebox
+{ padding: 1px 2px !important; }
+
+.gl-bibtex-tex-tiny         { font-size: 0.5479rem; }
+.gl-bibtex-tex-scriptsize   { font-size: 0.7306rem; }
+.gl-bibtex-tex-footnotesize { font-size: 0.8219rem; }
+.gl-bibtex-tex-small        { font-size: 0.9132rem; }
+.gl-bibtex-tex-normalsize   { font-size: 1rem;      }
+.gl-bibtex-tex-large        { font-size: 1.0959rem; }
+.gl-bibtex-tex-large2       { font-size: 1.3151rem; }
+.gl-bibtex-tex-large3       { font-size: 1.5781rem; }
+.gl-bibtex-tex-huge         { font-size: 1.8941rem; }
+.gl-bibtex-tex-huge2        { font-size: 2.2721rem; }
+
+/*
+.gl-bibtex-tex-sloppy. .gl-bibtex-tex-fussy { }
+.gl-bibtex-tex-noindent { }
+*/
+
+.gl-bibtex-tex-label { display: none; }
+
+/* Currently, this will always have '?' inside. */
+.gl-bibtex-tex-ref { font-weight: bold; }
+
+/* 1 normal space ~= 0.276em */
+.gl-bibtex-tex-neg-thin-space { margin-right: -0.138em; }
+.gl-bibtex-tex-thin-space { margin-right: -0.138em; }
+.gl-bibtex-tex-thick-space { margin-right: 0.138em; }
+/* .gl-bibtex-tex-mid-space { } */
+
+.gl-bibtex-tex-vspace,
+.gl-bibtex-tex-vspace-star,
+.gl-bibtex-tex-it-adjust-space,
+.gl-bibtex-tex-tex-vfill { display: none; }
+
+.gl-bibtex-tex-hspace,
+.gl-bibtex-tex-hspace-star,
+.gl-bibtex-tex-ctrl-space,
+.gl-bibtex-tex-quad,
+.gl-bibtex-tex-qquad,
+.gl-bibtex-tex-hfill { white-space: pre; }
+
+.gl-bibtex-tex-ending-punct::after { content: " "; }
+
+.gl-bibtex-tex-uppercase { text-transform: uppercase; }
+.gl-bibtex-tex-lowercase { text-transform: lowercase; }
+
+.gl-bibtex-tex-url
+{
+    overflow-wrap: break-word;
+    word-break: break-all;
+    line-break: loose;
+    line-break: anywhere;
+}
+
+/*
+.gl-bibtex-tex-etalchar { }
+.gl-bibtex-tex-textsuperscript { }
+.gl-bibtex-tex-textsubscript { }
+*/

@@ -1,0 +1,740 @@
+/* Display CNY symbol and quotation marks with Micorosft YaHei. */
+@font-face
+{
+    font-family: 'ChSimpPunctSans-YaHei';
+    src: local('MicrosoftYaHeiBold'), local('Microsoft YaHei Bold'), local('Microsoft YaHei');
+    font-weight: 700;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-YaHei';
+    src: local('MicrosoftYaHeiRegular'), local('Microsoft YaHei Regular'), local('Microsoft YaHei');
+    font-weight: 400;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-YaHei';
+    src: local('MicrosoftYaHeiLight'), local('Microsoft YaHei Light'), local('Microsoft YaHei');
+    font-weight: 300;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019;
+}
+
+/* Display CNY symbol, quotation marks and dashes with PingFang SC. */
+@font-face
+{
+    font-family: 'ChSimpPunctSans-PingFangSC';
+    src: local('PingFangSC-Semibold'), local('PingFang-SC-Semibold'), local('PingFang SC Semibold');
+    font-weight: 600;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019, U+2013, U+2014;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-PingFangSC';
+    src: local('PingFangSC-Medium'), local('PingFang-SC-Medium'), local('PingFang SC Medium'), local('PingFang SC');
+    font-weight: 500;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019, U+2013, U+2014;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-PingFangSC';
+    src: local('PingFangSC-Regular'), local('PingFang-SC-Regular'), local('PingFang SC Regular'), local('PingFang SC');
+    font-weight: 400;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019, U+2013, U+2014;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-PingFangSC';
+    src: local('PingFangSC-Light'), local('PingFang-SC-Light'), local('PingFang SC Light'), local('PingFang SC');
+    font-weight: 300;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019, U+2013, U+2014;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-PingFangSC';
+    src: local('PingFangSC-Ultralight'), local('PingFang-SC-Ultralight'), local('PingFang SC Ultralight'), local('PingFang SC');
+    font-weight: 200;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019, U+2013, U+2014;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-PingFangSC';
+    src: local('PingFangSC-Thin'), local('PingFang-SC-Thin'), local('PingFang SC Thin'), local('PingFang SC');
+    font-weight: 100;
+    unicode-range: U+A5, U+201C, U+201D, U+2018, U+2019, U+2013, U+2014;
+}
+
+/* Display ellipsis with SimSun. */
+@font-face
+{
+    font-family: 'ChSimpPunctSans-SimSun';
+    src: local('NSimSun'), local('SimSun');
+    font-weight: 400;
+    unicode-range: U+2026;
+}
+
+/* Display ellipsis with Songti SC. */
+@font-face
+{
+    font-family: 'ChSimpPunctSans-SongtiSC';
+    src: local('STSongti-SC-Black'), local('STSongti SC Black'), local('Songti SC');
+    font-weight: 900;
+    unicode-range: U+2026;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-SongtiSC';
+    src: local('STSongti-SC-Bold'), local('STSongti SC Bold'), local('Songti SC');
+    font-weight: 700;
+    unicode-range: U+2026;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-SongtiSC';
+    src: local('STSongti-SC-Regular'), local('STSongti SC Regular'), local('Songti SC');
+    font-weight: 400;
+    unicode-range: U+2026;
+}
+@font-face
+{
+    font-family: 'ChSimpPunctSans-SongtiSC';
+    src: local('STSongti-SC-Light'), local('STSongti SC Light'), local('Songti SC');
+    font-weight: 300;
+    unicode-range: U+2026;
+}
+
+*
+{
+    font-family: inherit;
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    -ms-high-contrast-adjust: inherit;
+}
+
+html
+{
+    -ms-high-contrast-adjust: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body
+{
+    font-size: /* @@ BaseFontSizeNarrow */ 16px /* BaseFontSizeNarrow @@ */;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* [lang]:lang(zh) / [lang]:not(:lang(zh))
+** allows us to alter the font fallback stack
+** only when the language switches.
+*/
+html,
+[lang]:not(:lang(zh)):not(pre):not(code):not(samp):not(kbd):not(var)
+{
+    font-family:
+        /* @@ LatinSansFont */
+            'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+        /* LatinSansFont @@ */,
+        /* @@ ChSimpSansFontLow */
+            'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+        /* ChSimpSansFontLow @@ */,
+        /* @@ EmojiFont */
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+        /* EmojiFont @@ */,
+        sans-serif;
+}
+
+html:lang(zh),
+[lang]:lang(zh):not(pre):not(code):not(samp):not(kbd):not(var)
+{
+    font-family:
+        /* @@ ChSimpPunctSansFont */
+            'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+        /* ChSimpPunctSansFont @@ */,
+        /* @@ LatinSansFont */
+            'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+        /* LatinSansFont @@ */,
+        /* @@ ChSimpSansFontLow */
+            'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+        /* ChSimpSansFontLow @@ */,
+        /* @@ EmojiFont */
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+        /* EmojiFont @@ */,
+        sans-serif;
+}
+
+.gl-phantom { visibility: hidden; }
+
+.gl-body-wrapper
+{
+    margin: auto;
+    padding: 15px /* @@ PageLeftRightMarginNarrow */ 16px /* PageLeftRightMarginNarrow @@ */;
+    max-width: 1024px;
+}
+
+#post-metadata > h1 { margin-bottom: 0.4em; }
+
+.dateline, .byline-name { display: inline-block; }
+
+.gl-entry blockquote
+{
+    border-left-style: solid;
+    border-left-width: 0.2em;
+    padding: 0 1em;
+    margin: 1em 0;
+}
+
+.gl-entry table,
+.gl-entry p
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.gl-entry mark
+{
+    -ms-high-contrast-adjust: none !important;
+}
+
+.gl-entry cite:lang(zh) { font-style: normal; }
+
+.gl-entry pre
+{
+    border-radius: 2px;
+    padding: 1em;
+    line-height: 1.2;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+}
+.gl-entry pre,
+.gl-entry code,
+.gl-entry samp,
+.gl-entry kbd
+{
+    -ms-word-break: break-all;
+    word-break: break-all;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    font-family:
+        /* @@ LatinMonoFont */
+            'Consolas', 'Menlo', 'Courier New', 'Courier'
+        /* LatinMonoFont @@ */,
+        /* @@ ChSimpMonoFontLow */
+            'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+        /* ChSimpMonoFontLow @@ */,
+        /* @@ EmojiFont */
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+        /* EmojiFont @@ */,
+        monospace;
+}
+.gl-entry var
+{
+    -ms-word-break: break-all;
+    word-break: break-all;
+    font-family:
+        /* @@ LatinSerifFont */
+            'Georgia', 'Times New Roman'
+        /* LatinSerifFont @@ */,
+        /* @@ ChSimpSerifFont */
+            'STZhongsong', 'STSongTi', 'STFangSong', 'SimSun'
+        /* ChSimpSerifFont @@ */,
+        /* @@ EmojiFont */
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+        /* EmojiFont @@ */,
+        serif;
+    font-style: italic;
+}
+.gl-entry pre,
+.gl-entry code,
+.gl-entry samp,
+.gl-entry kbd,
+.gl-entry var
+{
+    -ms-word-break: break-all;
+    word-break: break-all;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+}
+.gl-entry :not(pre) > code,
+.gl-entry :not(pre) > samp,
+.gl-entry kbd
+{
+    border-radius: 2px;
+    padding: 0.1em 0.2em;
+}
+.gl-entry kbd
+{
+    border: 1px solid transparent;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.gl-entry h1
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    font-size: 2em;
+}
+.gl-entry h2
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    font-size: 1.6em;
+}
+.gl-entry h1, .gl-entry h2 { padding-bottom: 0.1em; }
+.gl-entry h3 { font-size: 1.4em; }
+.gl-entry h4 { font-size: 1.3em; }
+.gl-entry h5 { font-size: 1.2em; }
+.gl-entry h6 { font-size: 1.1em; }
+.gl-entry h1, .gl-entry h2, .gl-entry h3,
+.gl-entry h4, .gl-entry h5, .gl-entry h6
+{
+    font-weight: 600;
+    margin: 0.5em 0;
+    padding-bottom: 0.2em;
+    line-height: 1.4;
+}
+.gl-entry h1 { margin-top: 0; }
+
+.gl-entry h1, .gl-entry h2, .gl-entry h3,
+.gl-entry h4, .gl-entry h5, .gl-entry h6,
+.gl-entry table > thead
+{
+    /* @@ AvoidBreakAfter */
+-webkit-column-break-after: avoid;
+-webkit-break-after: avoid;
+page-break-after: avoid;    
+break-after: avoid;
+    /* AvoidBreakAfter @@ */
+}
+
+.gl-entry ol > li:first-child + li,
+.gl-entry ul > li:first-child + li,
+.gl-entry table > tbody > tr:first-child + tr
+{
+    /* @@ AvoidBreakBefore */
+-webkit-page-break-before: avoid;
+-webkit-column-break-before: avoid;
+-webkit-region-break-before: avoid;
+page-break-before: avoid;
+break-before: avoid;
+    /* AvoidBreakBefore @@ */
+}
+
+.gl-entry table
+{
+    border-collapse: collapse;
+}
+
+.gl-entry table > thead > tr > th, .gl-entry table > tbody > tr > td
+{
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.2em 1em;
+}
+
+.gl-entry abbr[title]
+{
+    cursor: help;
+    text-decoration: none;
+}
+
+.gl-entry abbr.obscure-abbr[title]
+{
+    border-bottom: 1px dotted;
+}
+
+.gl-entry em:lang(zh)
+{
+    font-style: normal;
+    border-bottom: 3px double;
+}
+
+.gl-entry .gl-small-caps
+{
+    font-variant: small-caps;
+}
+
+.gl-entry u
+{
+    text-decoration: none;
+}
+
+.gl-entry u[gl-unusual="ungrammatical"],
+.gl-entry u[gl-unusual="misspelled"]
+{
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+}
+
+.gl-entry u[gl-unusual="ungrammatical"]::before
+{
+    content: '* ';
+}
+
+.gl-entry u[gl-unusual="proper-noun"]:lang(zh)
+{
+    border-bottom: 1px solid;
+}
+
+/* A dead person's name is in a box in Chinese. */
+.gl-entry u[gl-unusual="dead"]:lang(zh)
+{
+    border: 1px solid;
+    padding: 0 0.2em 0.1em 0.2em;
+}
+
+.gl-entry a { text-decoration: none; }
+.gl-entry a[href]:hover { text-decoration: underline; }
+
+.gl-entry a[target="_blank"]::after
+{
+    content: ' ↗';
+    font-family: /* @@ ArrowFont */ 'Calibri', 'Segoe UI Symbol', 'Segoe UI Emoji', '.LucidaGrandeUI-Bold', 'Lucida Grande', 'Menlo', 'Apple Color Emoji', 'AppleColorEmoji' /* ArrowFont @@ */;
+}
+
+.gl-entry figcaption > a::before,
+.gl-entry figcaption > a::after,
+.gl-entry a.gl-suppress-deco::before,
+.gl-entry a.gl-suppress-deco::after,
+.gl-entry .gl-suppress-deco a::before,
+.gl-entry .gl-suppress-deco a::after,
+footer a::before,
+footer a::after
+{
+    content: '' !important;
+}
+
+footer
+{
+    clear: both;
+    text-align: center;
+}
+footer.gl-footer-far
+{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+footer.gl-footer-near
+{
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+footer > *:not(.gl-preserved-dummy-class)
+{
+    margin: 0.5em 0.5em 0 0.5em;
+}
+
+.gl-image-box
+{
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    /* @@ AvoidBreakInside */
+-webkit-column-break-inside: avoid;
+-webkit-break-inside: avoid;
+page-break-inside: avoid;
+break-inside: avoid;
+    /* AvoidBreakInside @@ */
+}
+
+.gl-image-box *
+{
+    /* @@ AvoidBreakBefore */
+-webkit-page-break-before: avoid;
+-webkit-column-break-before: avoid;
+-webkit-region-break-before: avoid;
+page-break-before: avoid;
+break-before: avoid;
+    /* AvoidBreakBefore @@ */
+    /* @@ AvoidBreakInside */
+-webkit-column-break-inside: avoid;
+-webkit-break-inside: avoid;
+page-break-inside: avoid;
+break-inside: avoid;
+    /* AvoidBreakInside @@ */
+    /* @@ AvoidBreakAfter */
+-webkit-column-break-after: avoid;
+-webkit-break-after: avoid;
+page-break-after: avoid;    
+break-after: avoid;
+    /* AvoidBreakAfter @@ */
+}
+
+.katex-display
+{
+    /* @@ AvoidBreakInside */
+-webkit-column-break-inside: avoid;
+-webkit-break-inside: avoid;
+page-break-inside: avoid;
+break-inside: avoid;
+    /* AvoidBreakInside @@ */
+}
+
+.katex-display *
+{
+    /* @@ AvoidBreakBefore */
+-webkit-page-break-before: avoid;
+-webkit-column-break-before: avoid;
+-webkit-region-break-before: avoid;
+page-break-before: avoid;
+break-before: avoid;
+    /* AvoidBreakBefore @@ */
+    /* @@ AvoidBreakInside */
+-webkit-column-break-inside: avoid;
+-webkit-break-inside: avoid;
+page-break-inside: avoid;
+break-inside: avoid;
+    /* AvoidBreakInside @@ */
+    /* @@ AvoidBreakAfter */
+-webkit-column-break-after: avoid;
+-webkit-break-after: avoid;
+page-break-after: avoid;    
+break-after: avoid;
+    /* AvoidBreakAfter @@ */
+}
+
+.gl-float-always-left { float: left; }
+.gl-float-always-right { float: right; }
+
+@-webkit-keyframes targeted
+{
+    17% { opacity: 0; }
+    33% { opacity: 1; }
+    50% { opacity: 0; }
+    67% { opacity: 1; }
+    83% { opacity: 0; }
+}
+@-moz-keyframes targeted
+{
+    17% { opacity: 0; }
+    33% { opacity: 1; }
+    50% { opacity: 0; }
+    67% { opacity: 1; }
+    83% { opacity: 0; }
+}
+@-o-keyframes targeted
+{
+    17% { opacity: 0; }
+    33% { opacity: 1; }
+    50% { opacity: 0; }
+    67% { opacity: 1; }
+    83% { opacity: 0; }
+}
+@keyframes targeted
+{
+    17% { opacity: 0; }
+    33% { opacity: 1; }
+    50% { opacity: 0; }
+    67% { opacity: 1; }
+    83% { opacity: 0; }
+}
+
+body.gl-targeted-animation *:target
+{
+    -webkit-animation: targeted 1200ms 120ms;
+    -moz-animation: targeted 1200ms 120ms;
+    -o-animation: targeted 1200ms 120ms;
+    animation: targeted 1200ms 120ms;
+}
+
+.gl-reset-animations
+{
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    animation: none !important;
+}
+
+@media (min-resolution: 140dpi)
+{
+    html,
+    [lang]:not(:lang(zh)):not(pre):not(code):not(samp):not(kbd):not(var)
+    {
+        font-family:
+            /* @@ LatinSansFont */
+                'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+            /* LatinSansFont @@ */,
+            /* @@ ChSimpSansFontHigh */
+                'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+            /* ChSimpSansFontHigh @@ */,
+            /* @@ EmojiFont */
+                'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+            /* EmojiFont @@ */,
+            sans-serif;
+    }
+    html:lang(zh),
+    [lang]:lang(zh):not(pre):not(code):not(samp):not(kbd):not(var)
+    {
+        font-family:
+            /* @@ ChSimpPunctSansFont */
+                'ChSimpPunctSans-YaHei', 'ChSimpPunctSans-PingFangSC', 'ChSimpPunctSans-SongtiSC', 'ChSimpPunctSans-SimSun'
+            /* ChSimpPunctSansFont @@ */,
+            /* @@ LatinSansFont */
+                'Segoe UI', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Arial'
+            /* LatinSansFont @@ */,
+            /* @@ ChSimpSansFontHigh */
+                'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+            /* ChSimpSansFontHigh @@ */,
+            /* @@ EmojiFont */
+                'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+            /* EmojiFont @@ */,
+            sans-serif;
+    }
+    .gl-entry code,
+    .gl-entry samp,
+    .gl-entry kbd
+    {
+        font-family:
+            /* @@ LatinMonoFont */
+                'Consolas', 'Menlo', 'Courier New', 'Courier'
+            /* LatinMonoFont @@ */,
+            /* @@ ChSimpMonoFontHigh */
+                'DengXian', 'Microsoft YaHei', 'PingFang SC', 'PingFangSC'
+            /* ChSimpMonoFontHigh @@ */,
+            /* @@ EmojiFont */
+                'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'AppleColorEmoji'
+            /* EmojiFont @@ */,
+            monospace;
+    }
+}
+
+@media not all and (min-width: 500px)
+{
+    .gl-wide-only
+    {
+        display: none !important;
+    }
+}
+
+@media all and (min-width: 500px)
+{
+    html, body
+    {
+        font-size: /* @@ BaseFontSizeWide */ 16px /* BaseFontSizeWide @@ */;
+    }
+    .gl-body-wrapper
+    {
+        padding: 20px /* @@ PageLeftRightMarginWide */ 2.5vw /* PageLeftRightMarginWide @@ */;
+    }
+    .gl-narrow-only
+    {
+        display: none !important;
+    }
+    .gl-float-left
+    {
+        float: left;
+    }
+    .gl-float-right
+    {
+        float: right;
+    }
+}
+
+.gl-horizontal-only
+{
+    display: none !important;
+}
+
+@media not print
+{
+    .gl-print-only
+    {
+        display: none !important;
+    }
+}
+
+@media print
+{
+    html
+    {
+        -ms-high-contrast-adjust: none !important;
+    }
+    body
+    {
+        -ms-zoom: 90%;
+        zoom: 90%;
+    }
+    .gl-print-forbidden
+    {
+        display: none !important;
+    }
+    .gl-body-wrapper
+    {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .gl-entry abbr.obscure-abbr[title]
+    {
+        border-bottom: none;
+    }
+    .gl-entry abbr.obscure-abbr[title]::after
+    {
+        content: " (" attr(title) ")";
+    }
+    .gl-entry abbr.obscure-abbr[title]:lang(zh)::after
+    {
+        content: "（" attr(title) "）";
+    }
+    footer
+    {
+        margin-bottom: 0 !important;
+    }
+    .gl-entry a[href]::after
+    {
+        content: ' 🔗';
+        font-family: /* @@ SymbolFont */ 'Segoe UI Symbol', 'Segoe UI Emoji', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Apple Color Emoji', 'AppleColorEmoji' /* SymbolFont @@ */;
+    }
+    .gl-entry a[target="_blank"]::after
+    {
+        content: ' ↗';
+        font-family: /* @@ ArrowFont */ 'Calibri', 'Segoe UI Symbol', 'Segoe UI Emoji', '.LucidaGrandeUI-Bold', 'Lucida Grande', 'Menlo', 'Apple Color Emoji', 'AppleColorEmoji' /* ArrowFont @@ */;
+    }
+    .gl-entry a[href^="javascript:"]::after
+    {
+        content: ' 📜';
+        font-family: /* @@ SymbolFont */ 'Segoe UI Symbol', 'Segoe UI Emoji', 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', 'Apple Color Emoji', 'AppleColorEmoji' /* SymbolFont @@ */;
+    }
+}
+
+.gl-horizontal-forbidden
+{
+    display: none !important;
+}
+
+/* Manifest errors. */
+.gl-blog-warning
+{
+    background: white !important;
+    padding-left: 0.2em !important;
+    padding-right: 0.2em !important;
+    border: solid 1px red !important;
+    color: red !important;
+    font-weight: bold !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    -ms-high-contrast-adjust: none !important;
+}
+.gl-blog-warning > code
+{
+    -ms-high-contrast-adjust: auto !important;
+    font-family: 'Consolas', 'Menlo', 'Courier New', 'Courier', monospace !important;
+}

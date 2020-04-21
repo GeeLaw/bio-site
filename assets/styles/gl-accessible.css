@@ -1,0 +1,134 @@
+.katex * { -ms-high-contrast-adjust: none !important; }
+.katex annotation { display: none !important; }
+
+@media screen and (-ms-high-contrast: active),
+       screen and (-ms-high-contrast: black-on-white),
+       screen and (-ms-high-contrast: white-on-black)
+{
+    /* Higher specificity. */
+    html .gl-entry mark
+    {
+        border-width: 2px;
+        border-style: dotted;
+        border-color: Highlight;
+        background: HighlightText;
+        color: Highlight;
+        font-weight: bolder;
+        padding: 0 0.2em 0.1em 0.2em;
+    }
+    .gl-entry pre,
+    .gl-entry :not(pre) > code,
+    .gl-entry :not(pre) > samp
+    {
+        border-width: 1px;
+        border-style: solid;
+    }
+    .gl-entry kbd
+    {
+        border-bottom-width: 4px;
+    }
+    .gl-entry blockquote
+    {
+        border-style: solid;
+        border-width: 1px 1px 1px 4px;
+    }
+    .gl-entry a[href] { text-decoration: underline; }
+}
+
+/* if active, forbidden must be hidden.
+ * if not active, fallback, active, wob, bow must be hidden.
+ * if not wob, wob must be hidden.
+ * if not bow, bow must be hidden.
+ * if wob or bow, fallback must be hidden.
+ */
+@media screen and (-ms-high-contrast: active)
+{
+    .gl-accessible-high-contrast-forbidden { display: none !important; }
+}
+@media not all and (-ms-high-contrast: active)
+{
+    .gl-accessible-high-contrast-fallback,
+    .gl-accessible-high-contrast-active
+    { display: none !important; }
+
+    .gl-entry blockquote > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :not(p):first-child > :not(p):first-child > :first-child
+    { margin-top: 0; }
+
+    .gl-entry blockquote > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :not(p):last-child > :not(p):last-child > :last-child
+    { margin-bottom: 0; }
+}
+@media not all and (-ms-high-contrast: white-on-black)
+{
+    .gl-accessible-high-contrast-white-on-black { display: none !important; }
+}
+@media not all and (-ms-high-contrast: black-on-white)
+{
+    .gl-accessible-high-contrast-black-on-white { display: none !important; }
+}
+@media screen and (-ms-high-contrast: white-on-black),
+       screen and (-ms-high-contrast: black-on-white)
+{
+    .gl-accessible-high-contrast-forbidden,
+    .gl-accessible-high-contrast-fallback
+    { display: none !important; }
+}
+
+/* high contrast is for screen only. */
+@media not screen
+{
+    .gl-accessible-high-contrast-active,
+    .gl-accessible-high-contrast-black-on-white,
+    .gl-accessible-high-contrast-white-on-black,
+    .gl-accessible-high-contrast-fallback
+    {
+        display: none !important;
+    }
+
+    .gl-entry blockquote > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :not(p):first-child > :not(p):first-child > :first-child
+    { margin-top: 0; }
+
+    .gl-entry blockquote > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :not(p):last-child > :not(p):last-child > :last-child
+    { margin-bottom: 0; }
+}
+
+/* if the browser does not support -ms-high-contrast-adjust,
+ * there is no high contrast functionality available.
+ */
+@supports not (-ms-high-contrast-adjust: none)
+{
+    .gl-accessible-high-contrast-black-on-white,
+    .gl-accessible-high-contrast-white-on-black,
+    .gl-accessible-high-contrast-fallback,
+    .gl-accessible-high-contrast-active
+    { display: none !important; }
+
+    .gl-entry blockquote > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :not(p):first-child > :first-child,
+    .gl-entry blockquote > :not(p):first-child > :not(p):first-child > :not(p):first-child > :not(p):first-child > :first-child
+    { margin-top: 0; }
+
+    .gl-entry blockquote > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :not(p):last-child > :last-child,
+    .gl-entry blockquote > :not(p):last-child > :not(p):last-child > :not(p):last-child > :not(p):last-child > :last-child
+    { margin-bottom: 0; }
+}
