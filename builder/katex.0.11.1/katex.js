@@ -7295,7 +7295,7 @@ var buildTree_buildHTMLTree = function buildHTMLTree(tree, expression, settings)
   var htmlNode = buildHTML(tree, options);
   var katexNode = buildCommon.makeSpan(["katex"], [htmlNode]);
   /* Extension by GL. Annotate the equation with narration. */
-  katexNode.setAttribute('role', 'math');
+  katexNode.setAttribute('role', 'img');
   katexNode.setAttribute('aria-label', settings.GLarialabel);
   return buildTree_displayWrap(katexNode, settings);
 };

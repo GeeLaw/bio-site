@@ -85,3 +85,42 @@ see "builder/marked.0.3.6/bibtex-service.js" line 109.
 }
 
 ```
+
+## Accessibility Examples
+
+```blog-bib
+@misc{Example1,
+  author = {First Author and Second Author},
+  title = {Title without Equation}
+}
+
+@misc{Example2,
+  author = {Author One and Author Two and Author Three},
+  title = {Title with Equation $e^{i\pi}+1=0$}
+}
+
+@misc{Example3,
+  author = {Sole Author},
+  title = {Title with Annotated Equation $e^{i\pi}+1=0$},
+  biosite_arialabel = {Title with Annotated Equation e to the i times pi plus one equals zero}
+}
+
+@misc{Example4,
+  author = {Alice and Bob and Eve and Mallory and others},
+  title = {Link without Equation},
+  biosite_url = {#}
+}
+
+@misc{Example5,
+  author = {Sailor{ }Moon and Tuxedo{ }Mask},
+  title = {Link with Equation $e^{i\pi}+1=0$},
+  biosite_url = {#}
+}
+
+@misc{Example6,
+  author = {Youma and Cardian and Droid and Daimon and Lemures and Phage},
+  title = {Link with Annotated Equation $e^{i\pi}+1=0$},
+  biosite_url = {#},
+  biosite_arialabel = {Link with Annotated Equation e to the i times pi plus one equals zero}
+}
+```

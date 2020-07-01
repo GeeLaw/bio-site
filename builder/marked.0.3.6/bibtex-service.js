@@ -45,7 +45,7 @@ function RenderTitle(entry, result)
     }
     else if (hasLabel)
     {
-        result.push(' role="math"');
+        result.push(' role="img"');
     }
     result.push(hasLabel ? '><span aria-hidden="true">' : '>',
         titlehtml, hasLabel ? '</span></a></div>\n' : '</a></div>\n');
